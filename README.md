@@ -53,7 +53,7 @@ py --version
 py -m pip install -r requirements.txt
 ```
 
-Чтобы запустить powershell в конкретной директории можно нажать <kbd>SHIFT</kbd>+<kbd>ЛКМ</kbd> >> Запустить powershell здесь.
+Чтобы запустить powershell в конкретной директории можно нажать <kbd>SHIFT</kbd>+<kbd>ПКМ</kbd> >> Открыть окно powershell здесь.
 
 ### Запуск скрипта
 
