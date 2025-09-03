@@ -1,0 +1,14 @@
+# Venv
+venv/
+
+# Directories
+.idea/
+.cache/
+
+# Extensions
+*.xls
+*.xlsx
+*.log
+
+# Files
+.env
