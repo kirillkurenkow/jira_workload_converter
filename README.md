@@ -68,16 +68,16 @@ options:
   -h, --help            show this help message and exit
   -o OUTPUT_FILENAME, --output-filename OUTPUT_FILENAME
                         Output filename (must be xlsx)
-  -y YEAR, --year YEAR  Year for data generation
+  -y YEAR, --year YEAR  Year for data generation (XXXX format)
   --freeze-cell FREEZE_CELL
                         Cell cords for freezing rows above and columns to the left (ex: "3,3" or "12, 34")
 ```
 
 #### Подробное описание параметров
-* `filename` (обязательный, порядковый) - Имя файла выгрузки из Jira. Обязательно должен иметь формат xlsx.
+* `filename` (обязательный, порядковый) - Имя (и путь до) файла выгрузки из Jira. Обязательно должен иметь формат xlsx. Если файл находится со скриптом в одной директории - достаточно просто имени файла.
 * `-h` или `--help` (не обязательный) - Вывести help скрипта и завершить работу.
-* `-o` или `--output-filename` (не обязательный) - Имя файла, в который записать результат обработки. Обязательно должен иметь формат xlsx. Стандартное значение: "output.xlsx".
-* `-y` или `--year` (не обязательный) - Год, для которого требуется обработать данные. Должен быть положительным числом. Стандартное значение: текущий год.
+* `-o` или `--output-filename` (не обязательный) - Имя (и путь до) файла, в который записать результат обработки. Обязательно должен иметь формат xlsx. Стандартное значение: "output.xlsx". Если указано только имя файла - он записывается в ту директорию, где находится скрипт.
+* `-y` или `--year` (не обязательный) - Год, для которого требуется обработать данные. Должен быть положительным числом в формате XXXX. Стандартное значение: текущий год.
 * `--freeze-cell` (не обязательный) - Ячейка, слева и сверху от которой закрепятся строки и столбцы (для заголовков). Стандартное значение: (4,4), то есть D4.
 
 #### Примеры запуска скрипта
@@ -88,9 +88,9 @@ py jira_converter.py table.xlsx
 
 Запуск генерации для файла "table2.xlsx" с выводом в "result.xlsx" для 2018 года 
 ```powershell
-py jira_converter.py table2.xlsx -o result.xlsx -y 2018
+py jira_converter.py "C://documents/tables/table2.xlsx" -o result.xlsx -y 2018
 ```
-или
+
 ```powershell
-py jira_converter.py "table2.xlsx" --output-filename "result.xlsx" --year 2018
+py jira_converter.py "..\jira_workload_converter\table2.xlsx" --output-filename "result.xlsx" --year 2018
 ```

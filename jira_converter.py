@@ -807,7 +807,7 @@ if __name__ == '__main__':
     ArgParser.add_argument(
         '-y', '--year',
         default=datetime.today().year,
-        help='Year for data generation',
+        help='Year for data generation (XXXX format)',
         type=CheckArgs.year,
     )
     ArgParser.add_argument(
